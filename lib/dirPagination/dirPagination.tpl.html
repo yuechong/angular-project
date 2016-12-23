@@ -1,0 +1,19 @@
+<div class="ui pagination menu" ng-if="0 < pages.length || !autoHide">
+
+    <a class="item" ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }" ng-click="setCurrent(1)">
+        首页
+    </a>
+    <a class="item" ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }" ng-click="setCurrent(pagination.current - 1)">
+        上一页
+    </a>
+    <a class="item" ng-repeat="pageNumber in pages track by $index" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }" ng-click="setCurrent(pageNumber)">
+        {{ pageNumber }}
+    </a>
+
+    <a class="item" ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }" ng-click="setCurrent(pagination.current + 1)">
+        下一页
+    </a>
+    <a class="item" ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }" ng-click="setCurrent(pagination.last)">
+        尾页
+    </a>
+</div>

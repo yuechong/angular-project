@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="lib/materialize/css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/materialize/css/icon.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/my.min.css"> -->
+    <title>app</title>
+</head>
+
+<body>
+    <div ng-controller="NavCtrl">
+        <!-- slider -->
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="images/office.jpg">
+                    </div>
+                    <a href="#/user"><img class="circle" src="images/yuna.jpg"></a>
+                    <a href="#/name"><span class="white-text name">John Doe</span></a>
+                    <a href="#/email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a href="#/"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#/">Second Link</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#/">Third Link With Waves</a></li>
+        </ul>
+        <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>   -->
+        <!-- nav bar -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" class="brand-logo right">Logo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a data-activates="slide-out" id="my-slider"><i class="material-icons">menu</i></a></li>
+                    <li ng-click="pageSelect('data')" ng-class="{active:page=='data'}">
+                        <a href="#!/data"><i class="material-icons left">search</i>数据源</a>
+                    </li>
+                    <li ng-click="pageSelect('table')" ng-class="{active:page=='table'}">
+                        <a href="#!/table"><i class="material-icons left">search</i>表</a>
+                    </li>
+                    <li ng-click="pageSelect('charts')" ng-class="{active:page=='charts'}">
+                        <a href="#!/charts"><i class="material-icons left">search</i>报表</a>
+                    </li>
+                    <li ng-click="pageSelect('share')" ng-class="{active:page=='share'}">
+                        <a href="#!/share"><i class="material-icons left">share</i>我的分享</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- menu -->
+        <div class="fixed-action-btn toolbar">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+                <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
+                <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
+                <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
+                <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- page content -->
+    <div class="container">
+        <div class="row">
+            <!-- route -->
+            <div class="col s12">
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
+    <script src="lib/angular-1.6.0/angular.min.js" type="text/javascript"></script>
+    <script src="lib/angular-1.6.0/angular-route.min.js" type="text/javascript"></script>
+    <script src="lib/angular-1.6.0/angular-sanitize.min.js" type="text/javascript"></script>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script>
+    <!-- angular module -->
+    <script src="lib/angular-bindonce/bindonce.min.js" type="text/javascript"></script>
+    <script src="lib/angular-loading/spin.min.js" type="text/javascript"></script>
+    <script src="lib/angular-loading/angular-loading.min.js" type="text/javascript"></script>
+    <!-- js -->
+    <script src="app.js" type="text/javascript"></script>
+    <script src="js/services.min.js" type="text/javascript"></script>
+    <script src="js/directives.min.js" type="text/javascript"></script>
+    <script src="js/controllers.min.js" type="text/javascript"></script>
+</body>
+
+</html>
+
